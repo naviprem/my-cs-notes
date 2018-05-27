@@ -1,6 +1,5 @@
 
-title: Your awesome title
-email: your-email@example.com
+title: CS Notes
 description: >- # this means to ignore newlines until "baseurl:"
   My notes on computer science topics
 baseurl: "/my-cs-notes" # the subpath of your site, e.g. /blog
