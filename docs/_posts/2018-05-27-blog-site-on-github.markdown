@@ -10,11 +10,9 @@ One of the easiest ways to host static content on the internet is to host it on 
 Here are the step-by-step instructions
 
 1. Install Jekyll following the instructions [here](https://jekyllrb.com/)  
-
 ```angular2html
   gem install bundler jekyll
 ```
-
 2. Create a GitHub repo on your GitHub Account. 
 3. Go to `Settings` on the repo 
 4. Scroll-down to `GitHub Pages` section
