@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{site.title}}</title>
+    {% assign css_files = site.static_files | where: "css", true %}}
+    {% for css in css_files %}
+        <link rel=stylesheet" href="{{css.path | relative_url}}">
+    {% endfor %}
+</head>\
+<body>
+<div class="body">
+    {{content}}
+</div>
+</body>
+</html>
