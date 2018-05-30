@@ -25,7 +25,7 @@ Here are the step-by-step instructions
   jekyll new docs
 ```
 9. Update the base url of your jekyll project to the name of your github repo. 
-You can do this by updating the baseurl on _config.yml
+You can do this by updating the `baseurl` on `_config.yml`
 
 10. Serve your jekyll project 
 ```angular2html
