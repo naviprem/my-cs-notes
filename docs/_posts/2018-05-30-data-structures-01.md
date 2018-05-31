@@ -5,7 +5,9 @@ date:   2018-05-30
 categories: DS
 ---
 
-Reference: Coursers's Algorithms, [Part I](https://www.coursera.org/learn/algorithms-part1) and [Part II](https://www.coursera.org/learn/algorithms-part2) by Robert Sedgewick and Kevin Wayen
+### Reference: 
+
+Coursera's Algorithms, [Part I](https://www.coursera.org/learn/algorithms-part1) and [Part II](https://www.coursera.org/learn/algorithms-part2) by Robert Sedgewick and Kevin Wayen
 
 ### Order of growth classification:
 
@@ -14,8 +16,27 @@ Reference: Coursers's Algorithms, [Part I](https://www.coursera.org/learn/algori
 * `Linear: O(n)` Has a loop that processes every input. e.g. Find the maximum
 * `Linearithmic: O(n log n)` Divide and Conquer algorithms. e.g. Merge sort
 * `Quadratic: O(n^2)` Code that has (nested) double loop. e.g. check all pairs in the input
-* `Cubic: )(n^3)` triple loop. e.g. check all triples
+* `Cubic: O(n^3)` triple loop. e.g. check all triples
 * `Exponential: O(2^n)` code that performs exhaustive search on the inputs. e.g. check all subsets
+
+### Memory requirements
+
+* Typical memory usage for primitive types
+
+|types|bytes|
+|---|---|
+|bool|1|
+|byte|1|
+|char|2|
+|int|4|
+|float|4|
+|long|8|
+|double|8|
+|Array overhead| 24|
+|Object overhead| 16 + padding (memory allocated in multiples of 8)|
+|String overhead| 64|
+|reference/pointers| 8|
+
 
 ### Binary Search
 
@@ -55,7 +76,7 @@ console.log(index);
 * `Goal:` Given an array, find sets of 3 elements that summ up to 0
 
 * `Approach:` 
-    * dort the array
+    * sort the array
     * search for compliment of sum of pairs
 
 * `Time Complexity: O(n^2 log n)`
