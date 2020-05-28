@@ -32,4 +32,109 @@ HTTPS - Hyper Text Transfer Protocol Secure
 
 - It is the secure version of HTTP where the messages between browsers and web servers are encrypted 
 
+<div class="container">
+        <div class="sync-async" style="grid-row:1/span 5">
+            Synchronous script execution phase
+        </div>
+        <div class="document-state" style="grid-row:1/span 3">
+            document.readystate = <br>"loading"
+        </div>
 
+        <div class="phases">
+            <ul>
+                <li>Browser creates Document object</li>
+                <li>HTML Elements and their text contents on the web page are parsed</li>
+                <li>Element objects and Text Nodes are added to the DOM tree</li>
+            </ul>
+        </div>
+        <div class="phases">
+            <ul><li>
+                When a &lt;script&gt; tag is encountered,
+                <div class="container">
+                    <div>
+                        If not async or not defer or not module, then
+                        <ol>
+                            <li>The script is downloaded and executed.</li>
+                            <li>Parsing of HTML is paused while downloading and executing this script</li>
+                            <li>Script can see document content that comes before it.</li>
+                        </ol>
+                    </div>
+                    <div>
+                        If `async`, then
+                        <ol>
+                            <li>Download of the script begins.</li>
+                            <li>Any dependent modules also begins to download</li>
+                            <li>Parsing of HTML continues and not paused</li>
+                            <li>Script can see document content that comes before it.</li>
+                            <li>Script may or may not see other document content.</li>
+                        </ol>
+                    </div>
+                </div>
+            </li></ul>
+        </div>
+        <div class="phases">
+            <ul>
+                <li>Document of the web page is completely parsed at this time.</li>
+                <li>Images, videos and async scripts may still be downloading.</li>
+                <li>Async scripts may have started or completed execution.</li>
+            </ul>
+        </div>
+
+        <div class="document-state"  style="grid-row:4/span 2">
+            document.readystate = <br>"interactive"
+        </div>
+        <div class="phases">
+            <ul>
+                <li>Images, videos and async scripts may still be downloading.</li>
+                <li>Async scripts may have started or completed execution.</li>
+            </ul>
+        </div>
+
+        <div class="phases">
+            <ul>
+                <li>
+                Script tags that are 'defer' or type=module and not `async` are downloaded and executed
+                </li>
+                <li>
+                    This marks the completion of the synchronous script execution phase
+                </li>
+            </ul>
+        </div>
+
+        <div class="window-event">
+            "DOMContentLoaded" event fired on the window object<br><br>
+            Marks the completion of synchronous script execution phase and begining of asynchronous event-driven phase.
+        </div>
+
+        <div class="sync-async" style="grid-row:6/span 4">
+            Asynchronous Event driven phase
+        </div>
+
+        <div class="document-state">
+        </div>
+        <div class="phases">
+            <ul>
+                <li>Images, videos and async scripts completes downloading.</li>
+                <li>Async scripts completes execution.</li>
+            </ul>
+        </div>
+        <div class="window-event">
+            "load" event fired on the window object
+        </div>
+
+        <div class="document-state">
+            document.readystate = <br>"complete"
+        </div>
+        <div class="phases">
+            <ul>
+                <li>From this point onwards, event handlers are invoked asynchronously in response to
+                    <ol>
+                        <li>user input events</li>
+                        <li>network events</li>
+                        <li>timer expirations</li>
+                        <li>and so on</li>
+                    </ol>
+                </li>
+            </ul>
+        </div>
+    </div>
