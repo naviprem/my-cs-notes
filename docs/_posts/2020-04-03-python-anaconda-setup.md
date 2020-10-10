@@ -28,16 +28,45 @@ A virtual environment is a named, isolated, working copy of Python that that mai
 
 - Use the `conda` interface
 
-```
+```bash
 $ conda -V
 conda 3.7.0
 ```
 
-```
+```bash
 conda update conda
 ```
 
-```
+```bash
 conda create -n yourenvname python=x.x anaconda
 ```
 
+List Environments
+
+```bash
+conda info --envs
+```
+
+Activate env to use
+
+```bash
+conda activate abc
+```
+
+Deactivate Environment
+
+```bash
+conda deactivate
+```
+
+Clone Environments
+
+```bash
+conda create -n a --clone b
+```
+
+Delete an environment
+
+```bash
+conda remove -n a --all
+```
