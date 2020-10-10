@@ -37,9 +37,9 @@ The flex items however are participating in a flex formatting context, because t
 
 #### inline-block
 
-- Compared to display: inline, the major difference is that display: inline-block allows to set a width and height on the element.
-- Also, with display: inline-block, the top and bottom margins/paddings are respected, but with display: inline they are not.
-- Compared to display: block, the major difference is that display: inline-block does not add a line-break after the element, so the element can sit next to other elements.
+- Compared to display: inline, the major difference is that display: inline-block *allows to set a width and height* on the element.
+- Also, with display: inline-block, the *top and bottom margins/paddings are respected*, but with display: inline they are not.
+- Compared to display: block, the major difference is that display: inline-block *does not add a line-break after the element*, so the element can sit next to other elements.
 
 ### Overflow
 
@@ -77,4 +77,9 @@ The text-overflow property deals with text overflowing in the inline direction. 
 
 The writing-mode property accepts the values `horizontal-tb`, `vertical-rl` and `vertical-lr`. These values control the direction that blocks flow on the page. The initial value is horizontal-tb, which is a top to bottom block flow direction with a horizontal inline direction. Left to right languages, such as English, and Right to left languages. such as Arabic, are all horizontal-tb.
 
+### Containing Block
 
+- The size and position of an element are often impacted by its containing block
+- If the position property is **static, relative, or sticky**, the containing block is formed by the edge of the content box of the nearest ancestor element that is a **block container**
+- If the position property is **absolute**, the containing block is formed by the edge of the padding box of the nearest ancestor element that has a position value **other than static**
+- If the position property is **fixed**, the containing block is established by the **viewport**
