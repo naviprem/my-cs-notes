@@ -70,3 +70,9 @@ Delete an environment
 ```bash
 conda remove -n a --all
 ```
+
+Open jupiter notebook
+
+```bash
+ jupyter notebook
+ ```
